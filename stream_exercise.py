@@ -46,6 +46,22 @@ class StreamProcessor(object):
         self._stream = stream
 
     def process(self):
+        pass
+        count = 0
+        total = 0
+        while count < 10 and total < 200:
+            digits = self._stream.read(2)   # read 2 bytes
+            if len(digits) < 2:
+                # end of stream
+                break
+            count += 1
+            n = int(digits)
+            total += n
+            
+        return count
+        
+                
+    def process_todo(self):
         """
         TODO: Implement the `process` method, as described above.
         
